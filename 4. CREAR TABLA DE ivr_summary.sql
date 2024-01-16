@@ -36,7 +36,7 @@ SELECT detail.ivr_id
   , IF(detail.step_name = 'CUSTOMERINFOBYDNI.TX' AND detail.step_description_error = 'UNKNOWN', 1, 0) AS info_by_dni_lg
   , previous_calls.repeated_phone_24H
   , later_calls.cause_recall_phone_24H
-    FROM `my-first-project-kc.keepcoding.ivr_detail` detail
+    FROM `keepcoding.ivr_detail` detail
     LEFT JOIN previous_calls
       ON previous_calls.phone_number = detail.phone_number
     LEFT JOIN later_calls
